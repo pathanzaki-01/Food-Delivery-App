@@ -10,6 +10,7 @@ const Navbar = () => {
               <div className=' flex justify-between gap-6'>
                 <Link to='/' className='text-gray-600 dark:text-gray-300 hover:text-orange-700' >Home</Link>
                 <Link to='/restaurants' className='text-gray-600 dark:text-gray-300 hover:text-orange-700' >Restaurants</Link>
+                 <Link to='/cartpage' className='text-gray-600 dark:text-gray-300 hover:text-orange-700' >cart</Link>
               </div>
         </nav>
     
