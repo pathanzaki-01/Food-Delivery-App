@@ -8,6 +8,8 @@ import RestaurantDetailsPage from './pages/RestaurantDetailsPage'
 import CartPage from './pages/CartPage'
 import LoginPage from './pages/LoginPage'
 import ProtectedRoute from './routes/ProtectedRoute'
+import CheckoutPage from './pages/CheckoutPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 
 
@@ -20,15 +22,17 @@ const App = () => {
         <Route path='/' element={<HomePage/>} />
         <Route path='/restaurants' element={<RestaurantsPage/>}/>
         <Route path="/restaurants/:cuisine" element={<RestaurantDetailsPage />} />
-        <Route path='/cartpage'element={<CartPage/>} />
+        <Route path='/cart'element={<CartPage/>} />
         <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/checkout' element={
+         <Route path='/checkout' element={
           <ProtectedRoute>
-            <div className="p-6">Checkout page coming Day 7</div>
+            <CheckoutPage/>
             </ProtectedRoute>
             } />
+              <Route path='*' element={<NotFoundPage/>}/>
         
         </Routes>
+      
 
       <ToastContainer position='bottom-right' autoClose={2000} />
      

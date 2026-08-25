@@ -52,7 +52,7 @@ function Navbar() {
         </Link>
 
         <Link
-          to="/cartpage"
+          to="/cart"
           className="text-gray-600 dark:text-gray-300 hover:text-orange-700"
         >
           🛒 {totalQuantity}
