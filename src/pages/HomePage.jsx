@@ -1,6 +1,10 @@
 // src/pages/HomePage.jsx
 import { Link } from 'react-router-dom';
 
+const CUISINE_TICKER = [
+  'Italian', 'Pakistani', 'Mexican', 'Indian', 'Chinese', 'American', 'Thai', 'Mediterranean',
+];
+
 function HomePage() {
   return (
     <div className="bg-[#FAF3E8] dark:bg-gray-950">
@@ -23,6 +27,41 @@ function HomePage() {
         >
           Browse restaurants
         </Link>
+      </section>
+
+      <div className="bg-[#1C1B1A] py-3 overflow-hidden mt-10">
+        <div className="flex whitespace-nowrap animate-[marquee_22s_linear_infinite]">
+          {[...CUISINE_TICKER, ...CUISINE_TICKER].map((cuisine, index) => (
+            <span
+              key={index}
+              className="font-['Anton'] text-sm text-[#FAF3E8] tracking-wide mx-4 flex items-center gap-4"
+            >
+              {cuisine}
+              <span className="text-[#F5A623]">&middot;</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <section className="px-6 py-12 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+        <div>
+          <div className="font-['Anton'] text-3xl text-[#3D5C3A] dark:text-green-500">01</div>
+          <p className="text-xs font-bold text-[#5A5852] dark:text-gray-400 mt-1 tracking-wide">
+            PICK A KITCHEN
+          </p>
+        </div>
+        <div>
+          <div className="font-['Anton'] text-3xl text-[#3D5C3A] dark:text-green-500">02</div>
+          <p className="text-xs font-bold text-[#5A5852] dark:text-gray-400 mt-1 tracking-wide">
+            BUILD YOUR ORDER
+          </p>
+        </div>
+        <div>
+          <div className="font-['Anton'] text-3xl text-[#3D5C3A] dark:text-green-500">03</div>
+          <p className="text-xs font-bold text-[#5A5852] dark:text-gray-400 mt-1 tracking-wide">
+            TRACK IT HOME
+          </p>
+        </div>
       </section>
     </div>
   );
